@@ -1,61 +1,21 @@
-# [HTML5 Boilerplate](http://html5boilerplate.com)
+Projet de Johnny Cottereau et Kevin Verschaeve
 
-HTML5 Boilerplate is a professional front-end template for building fast,
-robust, and adaptable web apps or sites.
+## But
+Utiliser le sdk pour PHP d'amazon et capistrano pour deployer une application sur différents serveurs
 
-This project is the product of many years of iterative development and combined
-community knowledge. It does not impose a specific development philosophy or
-framework, so you're free to architect your code in the way that you want.
+L'application déployée n'est pas le plus important.
+Ici on s'est interressé au deploiement
 
-* Source: [https://github.com/h5bp/html5-boilerplate](https://github.com/h5bp/html5-boilerplate)
-* Homepage: [http://html5boilerplate.com](http://html5boilerplate.com)
-* Twitter: [@h5bp](http://twitter.com/h5bp)
+## Notre "appli"
+### ["pre deploiement"](https://github.com/johnny1991/capistrano)
+### ["repopourri"](https://github.com/kevin-verschaeve/repopourri)
 
+Le repo 'repopourri' est le code mis en production
+Le repo 'pre deploiement' est une interface permettant de visualiser nos instances, ELB, launch configuration... comme la console d'amazon
 
-## Quick start
+Il permet aussi:
+    * d'initialiser le processus de deploiement : créer un ELB, les metrics...
+    * mettre a jour la liste des serveurs
 
-Choose one of the following options:
-
-1. Download the latest stable release from
-   [html5boilerplate.com](http://html5boilerplate.com/) or a custom build from
-   [Initializr](http://www.initializr.com).
-2. Clone the git repo — `git clone
-   https://github.com/h5bp/html5-boilerplate.git` - and checkout the tagged
-   release you'd like to use.
-
-
-## Features
-
-* HTML5 ready. Use the new elements with confidence.
-* Cross-browser compatible (Chrome, Opera, Safari, Firefox 3.6+, IE6+).
-* Designed with progressive enhancement in mind.
-* Includes [Normalize.css](http://necolas.github.com/normalize.css/) for CSS
-  normalizations and common bug fixes.
-* The latest [jQuery](http://jquery.com/) via CDN, with a local fallback.
-* The latest [Modernizr](http://modernizr.com/) build for feature detection.
-* IE-specific classes for easier cross-browser control.
-* Placeholder CSS Media Queries.
-* Useful CSS helpers.
-* Default print CSS, performance optimized.
-* Protection against any stray `console.log` causing JavaScript errors in
-  IE6/7.
-* An optimized Google Analytics snippet.
-* Apache server caching, compression, and other configuration defaults for
-  Grade-A performance.
-* Cross-domain Ajax and Flash.
-* "Delete-key friendly." Easy to strip out parts you don't need.
-* Extensive inline and accompanying documentation.
-
-
-## Documentation
-
-Take a look at the [documentation table of contents](doc/TOC.md). This
-documentation is bundled with the project, which makes it readily available for
-offline reading and provides a useful starting point for any documentation you
-want to write about your project.
-
-
-## Contributing
-
-Anyone and everyone is welcome to [contribute](CONTRIBUTING.md). Hundreds of
-developers have helped make the HTML5 Boilerplate what it is today.
+Pour deployer avec capistrano, il est nécéssaire de l'installer et le configurer
+Une fois la liste des serveurs mise a jour, on lance la commande `cap production deploy` dans un terminal
