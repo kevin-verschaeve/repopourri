@@ -1,4 +1,4 @@
-name: Milestones handler
+name: Milestones creator
 
 on:
   pull_request:
