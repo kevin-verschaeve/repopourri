@@ -1,0 +1,16 @@
+name: Milestones handler
+
+on:
+  pull_request:
+    branches: [ dev ]
+    types: [ opened ]
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: iyu/actions-milestone@v1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          configuration-path: .github/milestone.yml
