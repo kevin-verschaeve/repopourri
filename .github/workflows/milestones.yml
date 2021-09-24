@@ -29,3 +29,9 @@ jobs:
           title: ${{ steps.semvers.outputs.patch }}
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - name: 'Push tag'
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: false
+          CUSTOM_TAG: ${{ steps.semvers.outputs.patch }}
