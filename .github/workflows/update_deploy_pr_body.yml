@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  prod-pull-request:
+  write-prod-pull-request-body:
     runs-on: ubuntu-latest
     if: ${{ github.head_ref == 'dev' }}
     steps:
