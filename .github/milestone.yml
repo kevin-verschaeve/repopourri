@@ -1,0 +1,5 @@
+base-branch:
+    - "(dev)"
+
+head-branch:
+    - "(ops|OPS)-.*"
