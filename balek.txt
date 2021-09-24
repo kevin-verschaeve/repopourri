@@ -1,1 +1,2 @@
 auto create milestone
+auto set milestone ?
