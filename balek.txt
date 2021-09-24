@@ -1,1 +1,1 @@
-try milestone auto create
+auto create milestone
