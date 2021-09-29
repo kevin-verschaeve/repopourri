@@ -19,6 +19,7 @@ jobs:
           pr_body: |
             <!-- START pr-commits -->
             <!-- END pr-commits -->
+          pr_label: "Production Deploy"
           pr_allow_empty: false
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Pull Request Body

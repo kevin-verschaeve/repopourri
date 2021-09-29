@@ -2,7 +2,7 @@ name: Update Deploy Prod PR body
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, reopened, synchronize]
 
 jobs:
   write-prod-pull-request-body:
