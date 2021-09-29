@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: create-description
-        run: sh ./simple_changelog.sh
+        run: sh ${GITHUB_WORKSPACE}/.github/simple_changelog.sh
         id: changelog
       - name: pull-request
         uses: repo-sync/pull-request@v2
