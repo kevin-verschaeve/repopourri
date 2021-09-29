@@ -24,9 +24,11 @@ jobs:
           pr_label: "Production Deploy"
           pr_allow_empty: false
           github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: debug
+        run: echo ${{ steps.changelog.outputs.COMMITS }}
       - name: update-pull-request
-        uses: kt3k/update-pr-description@v1.0.1
+        uses: kt3k/update-pr-changelog@v1.0.1
         with:
-          pr_body: ${{ steps.description.outputs.changelog }}
+          pr_body: ${{ steps.description.outputs.COMMITS }}
           destination_branch: master
           github_token: ${{ secrets.GITHUB_TOKEN }}
