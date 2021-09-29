@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       - name: create-description
         run: sh ${GITHUB_WORKSPACE}/.github/simple_changelog.sh
         id: changelog
