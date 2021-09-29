@@ -10,4 +10,4 @@ do
   commits=$(echo $commits$commitInfo 'PR: [#'$prId'](https://github.com/kevin-verschaeve/repopourri/pull/'$prId'/files))'"\n")
 done
 
-echo '{"body": "'$commits'"}'
+echo '::set-output name=changelog::'$commits
