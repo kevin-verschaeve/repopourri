@@ -1,24 +1,30 @@
-name: Create Deploy Prod PR
+name: Creates and Updates PR
 
 on:
   push:
     branches:
-      - "dev"
+      - dev
 
 jobs:
-  create-prod-pull-request:
+  prod-pull-request:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: prod-pull-request
+      - name: create-description
+        run: sh ./simple_changelog.sh
+        id: changelog
+      - name: pull-request
         uses: repo-sync/pull-request@v2
         with:
           source_branch: "dev"
           destination_branch: "master"
           pr_title: "Deploy Prod"
-          pr_body: |
-            <!-- START pr-commits -->
-            <!-- END pr-commits -->
           pr_label: "Production Deploy"
           pr_allow_empty: false
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: update-pull-request
+        uses: kt3k/update-pr-description@v1.0.1
+        with:
+          pr_body: ${{ steps.description.outputs.changelog }}
+          destination_branch: release
           github_token: ${{ secrets.GITHUB_TOKEN }}
