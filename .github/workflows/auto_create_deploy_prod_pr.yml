@@ -26,5 +26,5 @@ jobs:
         uses: kt3k/update-pr-description@v1.0.1
         with:
           pr_body: ${{ steps.description.outputs.changelog }}
-          destination_branch: release
+          destination_branch: master
           github_token: ${{ secrets.GITHUB_TOKEN }}
