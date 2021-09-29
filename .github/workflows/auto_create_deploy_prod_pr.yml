@@ -27,6 +27,6 @@ jobs:
       - name: update-pull-request
         uses: kt3k/update-pr-description@v1.0.1
         with:
-          pr_body: ${{ steps.description.outputs.COMMITS }}
+          pr_body: ${{ steps.changelog.outputs.COMMITS }}
           destination_branch: master
           github_token: ${{ secrets.GITHUB_TOKEN }}
